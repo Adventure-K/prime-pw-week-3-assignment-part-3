@@ -69,10 +69,58 @@ for (i of supplyChanges) {
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
 
+// For loop
+let forSum = 0;
+for (i = 0; i < supplyChanges.length; i += 1) {
+    forSum += supplyChanges[i];
+}
+console.log('For loop,', forSum)
+
+// For of loop
+let forOfSum = 0;
+for (i of supplyChanges) {
+    forOfSum = forOfSum += i;
+}
+console.log('For of loop,', forOfSum)
+
+// For in loop
+let forInSum = 0;
+for (i in supplyChanges) {
+    forInSum = forInSum += supplyChanges[i];
+}
+console.log('For in loop,', forInSum)
+
+/*
+// While loop
+let whileSum = 0;
+let z = 0;
+while (supplyChanges[z] < supplyChanges.length) {
+    whileSum = whileSum + supplyChanges[z];
+    z++;
+}
+console.log('While loop', whileSum) 
+*/
+
+
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
 //    There are 572 parts in total, and each box holds 7 parts.
 //    Use a `while` loop to keep adding parts to boxes until
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
+
+// pseudocode
+// as long as raw inventory is at least 7 parts,
+// remove 7 parts and add 1 filled box.
+// once raw inventory is less than 7 parts,
+// log the number of parts remaining and the number of filled boxes.
+
 console.log('9. Filling boxes with a "while" loop');
+let rawInv = 572;
+let fullBoxes = 0;
+while( rawInv >= 7 ) {
+    rawInv -= 7;
+    fullBoxes++;
+}
+console.log('All raw inventory was packaged and yielded', fullBoxes, 'filled boxes.')
+console.log('There are', rawInv, 'loose parts remaining.')
